@@ -1,0 +1,22 @@
+﻿<div ng-app="GovernmentDataApp" ng-controller="DataController">
+    <div class="row">
+        <h3 class="col-md-2">Id</h3>
+        <h3 class="col-md-2">Name</h3>
+        <h3 class="col-md-2">Baccalaureate Institution</h3>
+        <h3 class="col-md-3">Field of Study</h3>
+        <h3 class="col-md-3">Current Institution</h3>
+    </div>
+    <div class="row" ng-repeat="data in AwardRecipients | orderBy:'Name'">
+        <div class="col-md-2">{{data._id}}</div>
+        <div class="col-md-2">{{data.Name}}</div>
+        <div class="col-md-2">{{data['Baccalaureate Institution']}}</div>
+        <div class="col-md-3">{{data['Field of Study']}}</div>
+        <div class="col-md-3">{{data['Current Institution']}}</div>
+
+    </div>
+
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Scripts/local.js")
+}
